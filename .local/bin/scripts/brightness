@@ -1,0 +1,28 @@
+#!/bin/bash
+# Author: Suraj Patel
+#   
+#   
+#   
+display_name="$(xrandr | grep " connected" | cut -f1 -d " ")"
+brightness="1.0"
+step="0.1"
+[ -f "$HOME/.cache/brightness_level_cache" ] && brightness="$(< $HOME/.cache/brightness_level_cache)" || ( echo "1.0" > "$HOME/.cache/brightness_level_cache" )  
+
+case $1 in
+  "-i") [ "$brightness" != "1.0" ] && res="$(printf "%.1f\n" $(echo "$brightness + $step" | bc -l))" ;;
+  "-d") [ "$brightness" != "0.0" ] && res="$(printf "%.1f\n" $(echo "$brightness - $step" | bc -l))" ;;
+  *) ;;
+esac
+
+[ ! -z "$res" ] && echo $res > "$HOME/.cache/brightness_level_cache" && brightness=$res
+icon=""
+if (( $(echo "$brightness > 0.6" | bc -l) )) ; then
+  icon=""
+elif (( $(echo "$brightness < 0.4" | bc -l) )) ; then
+  icon=""
+fi
+
+status_brightness="$(echo "scale=0; $brightness * 100" | bc -l)"
+printf "%s %.0f%%\n" "$icon" "$status_brightness" > "$HOME/.cache/brightness_level_status_cache"
+xrandr --output $display_name --brightness $brightness
+
