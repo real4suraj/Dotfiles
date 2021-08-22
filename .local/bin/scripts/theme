@@ -1,0 +1,11 @@
+#!/bin/bash
+# Author: Suraj Patel 
+
+case "$1" in
+  "") wal --theme random ;;
+  "-l") wal --theme | less ;;
+  "-i") wal --theme | fzf | sed "s/- //;" | xargs -I{} wal --theme {} ;;
+  *) ret=$(wal --theme "$1")
+     ([[ $ret == *No* ]] && echo "Error: Theme not found. use theme -l to see the availabe themes." && exit) || echo -e "$ret" ;;
+esac
+xdotool key "alt+F5"

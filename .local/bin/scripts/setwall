@@ -1,0 +1,11 @@
+#!/bin/bash
+# Author: Suraj Patel 
+
+wall="$HOME/Pictures/.wall"
+[ -z "$1" ] && xwallpaper --zoom "$wall" && exit
+
+fullpath="$(readlink -f "$1")" 
+
+[[ ! "$(file --mime-type -b "$fullpath")" =~ image/* ]] && echo "Error: Invalid mime type" && exit 
+ln -sf "$fullpath" "$wall" && wal -i "$wall" && xdotool key "alt+F5"
+

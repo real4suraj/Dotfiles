@@ -1,0 +1,10 @@
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop
+image/gif=sxiv.desktop
+image/jpeg=sxiv.desktop
+image/png=sxiv.desktop
+text/plain=lvim.desktop
+
+[Added Associations]
+video/x-sgi-movie=mpv.desktop;
+text/plain=lvim.desktop;

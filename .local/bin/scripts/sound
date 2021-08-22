@@ -1,0 +1,14 @@
+#!/bin/bash
+# Author: Suraj Patel
+case $1 in
+  "-i") pamixer -i 5 ;;
+  "-d") pamixer -d 5 ;;
+  "-m") pamixer -d 100 ;;
+  *) ;;
+esac
+vol="$(pamixer --get-volume)"
+icon="奔"
+[ $vol -gt 55 ] && icon="墳" 
+[ $vol -eq 0 ] && icon="婢"
+echo "$icon $vol%" > "$HOME/.cache/sound_cache" 
+
