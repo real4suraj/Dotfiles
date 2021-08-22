@@ -19,7 +19,8 @@ done &
 while true; do
   sound_cache="$(< "$HOME/.cache/sound_cache")"
   timedate_cache="$(< "$HOME/.cache/timedate_cache")"
-  xsetroot -name " $sound_cache |$timedate_cache"
+  brightness_level_status_cache="$(< "$HOME/.cache/brightness_level_status_cache")"
+  xsetroot -name " $sound_cache | $brightness_level_status_cache |$timedate_cache"
   sleep 1s # Since we are reading from cached files, this won't hurt
 done &
 #Status bar modules -- END
