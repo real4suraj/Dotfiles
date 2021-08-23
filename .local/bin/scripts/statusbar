@@ -1,0 +1,8 @@
+#!/bin/bash
+# Author: Suraj Patel
+
+while true; do
+  xsetroot -name " $(sound) | $(brightness) | $(timedate)"
+  sleep 1m
+done 
+

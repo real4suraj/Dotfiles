@@ -1,0 +1,4 @@
+#!/bin/sh
+# Author: Suraj Patel
+printf "%s" " $(date "+%d %b %Y (%a) |  %I:%M %p")" 
+

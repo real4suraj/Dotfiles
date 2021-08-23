@@ -1,0 +1,9 @@
+#!/bin/bash
+# Author: Suraj Patel
+for x in $(ps aux | grep "statusbar" | awk '{print $2}') 
+do
+  kill -15 "$x" > /dev/null 2>&1 
+done
+#Refresh bar
+statusbar &
+

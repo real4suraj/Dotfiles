@@ -10,5 +10,5 @@ vol="$(pamixer --get-volume)"
 icon="奔"
 [ $vol -gt 55 ] && icon="墳" 
 [ $vol -eq 0 ] && icon="婢"
-echo "$icon $vol%" > "$HOME/.cache/sound_cache" 
-
+printf "%s" "$icon $vol%" 
+[ ! -z "$1" ] && refreshbar
