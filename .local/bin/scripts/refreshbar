@@ -1,9 +1,12 @@
 #!/bin/bash
 # Author: Suraj Patel
+
+# Kill all statusbar instances
 for x in $(ps aux | grep "statusbar" | awk '{print $2}') 
 do
   kill -15 "$x" > /dev/null 2>&1 
 done
-#Refresh bar
+
+#Refresh
 statusbar &
 
