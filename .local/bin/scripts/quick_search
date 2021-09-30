@@ -1,4 +1,6 @@
 #!/bin/bash
+# Author : Suraj Patel
+
 url=""
 search="$(echo -e "\ngithub(real4suraj)\ngithub(real4suraj2)\nstack overflow\narch\nyoutube\nwhatsapp\n" | dmenu -nf "$(xrdb -q | sed -n /*.color14/p | cut -f2)" -nb "$(xrdb -q | sed -n /*.color0/p | cut -f2)" -sb "$(xrdb -q | sed -n /*.color6/p | cut -f2)" -sf "$(xrdb -q | sed -n /*.color0/p | cut -f2)" -p "Web")"
 case "$search" in
@@ -11,5 +13,5 @@ case "$search" in
   "whatsapp") url="https://web.whatsapp.com" ;;
   *) url="https://google.com/search?q=$search" ;;
 esac
-brave --new-window "$url" > /dev/null 2>&1
-xdotool key "Alt+m"
+vieb "$url" > /dev/null 2>&1
+# xdotool key "Alt+m"

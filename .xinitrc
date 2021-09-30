@@ -11,7 +11,10 @@ setwall &
 xrdb ~/.Xresources
 
 #Status bar
-#statusbar &
+statusbar &
+
+# Speed xrate up
+xset r rate 300 50 &	
 
 #Start dwm
 exec dwm
