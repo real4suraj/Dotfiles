@@ -2,9 +2,11 @@
 # Author : Suraj Patel
 
 url=""
-search="$(echo -e "\ngithub(real4suraj)\ngithub(real4suraj2)\nstack overflow\narch\nyoutube\nwhatsapp\n" | dmenu -nf "$(xrdb -q | sed -n /*.color14/p | cut -f2)" -nb "$(xrdb -q | sed -n /*.color0/p | cut -f2)" -sb "$(xrdb -q | sed -n /*.color6/p | cut -f2)" -sf "$(xrdb -q | sed -n /*.color0/p | cut -f2)" -p "Web")"
+port="unused"
+search="$(echo -e "\ngithub(real4suraj)\ngithub(real4suraj2)\nstack overflow\narch\nyoutube\nwhatsapp\ndev\n" | dmenu -nf "$(xrdb -q | sed -n /*.color14/p | cut -f2)" -nb "$(xrdb -q | sed -n /*.color0/p | cut -f2)" -sb "$(xrdb -q | sed -n /*.color6/p | cut -f2)" -sf "$(xrdb -q | sed -n /*.color0/p | cut -f2)" -p "Web")"
 case "$search" in
   "") url="https://duckduckgo.com" ;;
+  "dev") port="$(echo -e "" | dmenu -nf "$(xrdb -q | sed -n /*.color14/p | cut -f2)" -nb "$(xrdb -q | sed -n /*.color0/p | cut -f2)" -sb "$(xrdb -q | sed -n /*.color6/p | cut -f2)" -sf "$(xrdb -q | sed -n /*.color0/p | cut -f2)" -p "Port")" ;;
   "github(real4suraj)") url="https://github.com/real4suraj" ;;
   "github(real4suraj2)") url="https://github.com/real4suraj2" ;;
   "stack overflow") url="https://stackoverflow.com" ;;
@@ -13,5 +15,6 @@ case "$search" in
   "whatsapp") url="https://web.whatsapp.com" ;;
   *) url="https://google.com/search?q=$search" ;;
 esac
-vieb "$url" > /dev/null 2>&1
+[ "$port" == "" ] && port="3000" 
+[ "$port" != "unused" ] && surf -N "http://localhost:$port" || vieb "$url"
 # xdotool key "Alt+m"

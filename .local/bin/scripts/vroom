@@ -1,0 +1,9 @@
+#!/bin/bash
+# Author: Suraj Patel
+suffix="nature"
+[ -z "$1" ] || suffix="$1"
+url="https://source.unsplash.com/1920x1080/?$suffix"
+echo "Downloading wallpaper ..."
+wget "$url" -O "$HOME/Pictures/.temp.png" > /dev/null 2>&1
+setwall "$HOME/Pictures/.temp.png"
+
