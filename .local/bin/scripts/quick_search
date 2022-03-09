@@ -16,5 +16,5 @@ case "$search" in
   *) url="https://google.com/search?q=$search" ;;
 esac
 [ "$port" == "" ] && port="3000" 
-[ "$port" != "unused" ] && surf -N "http://localhost:$port" || vieb "$url"
+[ "$port" != "unused" ] && surf -N "http://localhost:$port" || brave "$url"
 # xdotool key "Alt+m"

@@ -1,5 +1,6 @@
 #!/bin/bash
-#Author: Suraj Patel
+# Author: Suraj Patel
+
 directory="$HOME/Pictures/Screenshots"
 video_directory="$HOME/Videos/Screencasts"
 temp="$HOME/.cache/screen.mp4"

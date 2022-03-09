@@ -7,5 +7,5 @@ wall="$HOME/Pictures/.wall"
 fullpath="$(readlink -f "$1")" 
 
 [[ ! "$(file --mime-type -b "$fullpath")" =~ image/* ]] && echo "Error: Invalid mime type" && exit 
-ln -sf "$fullpath" "$wall" && wal -i "$wall" && xdotool key "alt+F5"
+ln -sf "$fullpath" "$wall" && wal -c && wal -i "$wall" && xdotool key "alt+F5"
 

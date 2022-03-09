@@ -1,0 +1,19 @@
+vim.o.mouse = 'a'
+vim.o.number = true
+vim.o.wrap = false
+vim.o.incsearch = true
+vim.o.hlsearch = false
+vim.o.ignorecase = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.colorcolumn = '80'
+vim.o.swapfile = false
+vim.o.clipboard = 'unnamedplus'
+vim.o.signcolumn = 'yes'
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
+vim.o.cursorline = true
+vim.o.undofile = true
+vim.o.updatetime = 300
+
+vim.g.mapleader = ' ' 

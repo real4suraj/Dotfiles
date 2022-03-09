@@ -1,6 +1,9 @@
 #Set wallpaper
 setwall &
 
+#Set random wallpaper after downloading from unsplash
+#vroom &
+
 #Compositor
 (sleep 1s && xcompmgr) &
 

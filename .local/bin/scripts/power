@@ -1,5 +1,5 @@
 #!/bin/bash
-#Author: Suraj Patel
+# Author: Suraj Patel
 
 case "$(echo -e "襤 shutdown\nﰇ reboot\n suspend\n exit dwm" | dmenu -nf "$(xrdb -q | sed -n /*.color14/p | cut -f2)" -nb "$(xrdb -q | sed -n /*.color0/p | cut -f2)" -sb "$(xrdb -q | sed -n /*.color6/p | cut -f2)" -sf "$(xrdb -q | sed -n /*.color0/p | cut -f2)" -p "Power Options")" in
 	"襤 shutdown") loginctl poweroff ;;

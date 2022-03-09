@@ -1,0 +1,5 @@
+require('basics')
+require('colors')
+require('mappings')
+require('plugins')
+require('treesitter-config')
